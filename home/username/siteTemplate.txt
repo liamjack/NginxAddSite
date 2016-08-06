@@ -1,0 +1,12 @@
+server {
+    server_name %DOMAINNAMES%;
+    root %SITEDIRECTORY%;
+    ssl_certificate /var/lib/acme/live/%MAINDOMAINNAME%/fullchain;
+    ssl_certificate_key /var/lib/acme/live/%MAINDOMAINNAME%/privkey;
+    include global-ssl.conf;
+}
+
+server {
+    server_name %DOMAINNAMES%;
+    include global.conf;
+}
